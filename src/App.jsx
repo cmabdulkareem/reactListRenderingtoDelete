@@ -29,9 +29,15 @@ function App() {
   return (
     <div className='container'>
       <div className="row justify-content-around">
-            {movies.map((value, index)=>
-              <Card key={index} movieTitle={value.title} movieDesc={value.desc} movieThumb={value.image} />
-            )}
+            
+        {movies.length > 0 ? (
+          movies.map((value, index) =>
+            <Card key={index} movieTitle={value.title} movieDesc={value.desc} movieThumb={value.image} />
+          )
+        ) : (
+          <Card movieTitle="No movies available" />
+        )}
+            
       </div>
     </div>
   )
